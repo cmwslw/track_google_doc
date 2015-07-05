@@ -22,7 +22,8 @@ if [[ `git status --porcelain` ]]; then
     # changes
     echo "CHANGES!"
     mv /tmp/tracktmp/*.html .
-    tidy -iqm *.html
+    # The true is to avoid early exit
+    tidy -iqm *.html || true
     git add -A
     git commit -m "Revision as of $thetime"
     git push
