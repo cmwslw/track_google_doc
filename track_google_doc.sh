@@ -14,7 +14,7 @@ thetime=$(date)
 ./get_doc.sh > doc.zip
 unzip doc.zip
 rm doc.zip
-html2text *.html > README.md
+html2text --ignore-links *.html > README.md
 mv *.html /tmp/tracktmp/
 git checkout *.html
 
